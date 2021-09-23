@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "e1cf240d-d3f6-4055-ab4d-05bcb452f4ab",
+		"name": "NDA_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test23\",\r\n    \"email\" :\"test23@mail.com\",\r\n    \"role\" : 1,\r\n    \"department\" : \"testdept2\",\r\n    \"password\" : \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test2Updated\",\r\n    \"email\" :\"test2@mail.com\",\r\n    \"role\" : 1,\r\n    \"department\" : \"testdept2\",\r\n    \"password\" : \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/user/update",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" :\"test2@mail.com\",\r\n    \"password\" : \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/user/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/user/getUser/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"getUser",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/user/deleteUser/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"deleteUser",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

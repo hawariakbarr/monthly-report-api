@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "5cac37b4-2f35-440c-8044-6446bbe25b5a",
+		"name": "NDA_project Guest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create guest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"name\":\"G1\",\r\n    \"email\":\"g1@mail.com\",\r\n    \"nik\":\"230913123010\",\r\n    \"institution\":\"TestG\",\r\n    \"phoneNumber\":\"0920129301\",\r\n    \"arrivalTime\" :\"\",\r\n    \"departureTime\":\"\",\r\n    \"ktpImage\":\"skdalskdjasldjalsda\",\r\n    \"signImage\":\"skdalskdjasldjalsda\",\r\n    \"visitReason\":\"skdladaldalkdjaslkdalksdlska\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/guest/add",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update guest",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"name\":\"G1updated\",\r\n    \"email\":\"g1@mail.com\",\r\n    \"nik\":\"230913123010\",\r\n    \"institution\":\"TestG\",\r\n    \"phoneNumber\":\"0920129301\",\r\n    \"arrivalTime\" :\"\",\r\n    \"departureTime\":\"\",\r\n    \"ktpImage\":\"skdalskdjasldjalsda\",\r\n    \"signImage\":\"skdalskdjasldjalsda\",\r\n    \"visitReason\":\"skdladaldalkdjaslkdalksdlska\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/guest/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all guest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/guest/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id guest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/guest/getGuest/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"getGuest",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id guest",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMGx6MDkiLCJleHAiOjE2MzEzNzQ1NzQsImlhdCI6MTYzMTI4OTk3NH0.gdmXJ548qRJwg_trswINHzOZdpntm3cWBdTn8zDuSAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/guest/deleteGuest/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"deleteGuest",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload ktp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ADMIN/Pictures/Test/document_test.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/guest/uploaderKTP",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"uploaderKTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload ttd",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ADMIN/Pictures/Test/document_test.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/guest/uploaderTTD",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"guest",
+						"uploaderTTD"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
