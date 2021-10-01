@@ -7,7 +7,7 @@ from ..utils.authorisation import generateToken
 from ..utils.authorisation import verifyLogin
 
 
-from ..utils.models import db, User, Guest
+from ..utils.models import db, User
 
 from . import router
 
@@ -31,7 +31,7 @@ def registerUser():
     email = body["email"]
     password = body["password"]
     role = body["role"]
-    department = body["department"]
+    phoneNumber = body["phoneNumber"]
 
     response = {
         "error" : True,
@@ -51,7 +51,7 @@ def registerUser():
                 email = email,
                 password = password,
                 role = role,
-                department = department.title(),
+                phoneNumber = phoneNumber,
                 active =  True,
                 created_at = datetime.datetime.now() )
 
@@ -139,7 +139,7 @@ def updateUser(id):
     password = body["password"]
     role = body["role"]
     active = body["active"]
-    department = body["department"]
+    phoneNumber = body["phoneNumber"]
 
     response = {
         "error" : True,
@@ -159,7 +159,7 @@ def updateUser(id):
             user.password = password
             user.role = role
             user.active = active
-            user.department = department.title()
+            user.phoneNumber = phoneNumber
 
             db.session.commit()
 

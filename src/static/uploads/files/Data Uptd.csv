@@ -1,0 +1,128 @@
+﻿id,opd_id,name,address,pic,phone_number
+1,1,Kas Daerah,"Jl. Braga No. 12 Braga, Sumur Bandung, Kota Bandung",Arief,082216603734
+2,1,Layanan Pengadaan Secara Elektronik,"Jl. Dago Pakar Permai VI No. 20, Kebon Pisang, Sumur Bandung",Rachmad,085624200107
+3,8,UPTD Laboratorium Lingkungan Hidup,"Jl. A.H. Nasution No.117, Pasir Endah, Ujung Berung, Kota Bandung",Yudha Pratama,081221669856
+4,8,UPTD Pengelolaan Sampah TPA/TPST Regional,"Gedung BPKAD Jabar, Jl. Kawaluyaan indah samping gedung Perkim jabar Lantai 6",Derry,081221472404
+5,12,UPTD Pengelolaan dan Pelayanan Perumahan Jawa Barat,"Jl. Pasir Impun No 56, Kec. Mandala Jati, Kota  Bandung",Mochamad Riyadi,085222508253
+6,14,UPTD Laboratorium Kesehatan,"Jl. Sederhana No.3 - 5, Pasteur, Sukajadi, Kota Bandung, Jawa Barat 40161",,0225426689
+7,14,UPTD Pelatihan Kesehatan,"Jl. Pasteur No.31, Pasir Kaliki, Cicendo, Kota Bandung, Jawa Barat 40171",YUSUF RIDWAN,085720002679
+8,14,RUMAH SAKIT PARU,"Jl. Pangeran Kejaksan, Sidawangi, Sumber, Cirebon",,
+9,14,RUMAH SAKIT JIWA,"Jl. Kolonel Masturi Km No. No.7, Lembang, Kabupaten Bandung Barat",,
+10,14,RUMAH SAKIT UMUM DAERAH AL-IHSAN,"Jl. Ki Astramanggala, Kec. Baleendah, Kab. Bandung",,
+11,14,RUMAH SAKIT UMUM DAERAH PAMEUNGPEUK,"Jl. Miramareu No.99, Sirnabakti, Pameungpeuk, Kabupaten Garut",,
+12,14,RUMAH SAKIT UMUM DAERAH JAMPANG KULON,"Jl. Cibarusah No.1, Tanjung, Jampang Kulon, Kab. Sukabumi",,
+13,14,RUMAH SAKIT UMUM DAERAH KESEHATAN KERJA,"Jl. Rancaekek Km.27 No.612, Nanjungmekar, Rancaekek, Bandung",,
+14,15,Cabang Dinas Pendidikan Wilayah I,"Jl. Karadenan No.7, Cibinong, Kab. Bogor",Adriansyah,087839107277
+15,15,Cabang Dinas Pendidikan Wilayah II,"Ruko Millenium - Jl. Pangeran Asogiri No. 25 Kel. Tanah Baru, Bogor Utara",Pak Aang,08122174467
+16,15,Cabang Dinas Pendidikan Wilayah III,"Kantor Cabang Dinas Pendidikan Wil III - Jalan Celebration Boulevard, Ruko River Town Blok BA 2, Nomor 12-15 Komplek Grandwisata,  Tambun Selatan,  Kabupaten Bekasi,  Jawa Barat,  Indonesia,  17510",M. Anshor,081212616898
+17,15,Cabang Dinas Pendidikan Wilayah IV,Ruko Dharmawangsa II Blok C 01 Komp. Grand Taruma Karawang Barat,Duyeh Saputra,081912531968
+18,15,Cabang Dinas Pendidikan Wilayah V,"Jl. Pabuaran No.51, Nyomplong, Warudoyong, Kota Sukabumi, Jawa Barat 43131",Dani Indrayana,085793055599
+19,15,Cabang Dinas Pendidikan Wilayah VI,"Jalan Raya Cipeyeum KM No.19, Kertasari, Haurwangi, Cianjur",Rizal Pauzi Ramdhani,082219193716
+20,15,Cabang Dinas Pendidikan Wilayah VII,"Jl. Dr. Radjiman No. 6, Bandung (Sementara)",EDI KUSNADI,082215757718
+21,15,Cabang Dinas Pendidikan Wilayah VIII,"Kampus IKOPIN Gd. G Jl. Raya Jatinangor KM. 20,5 Jatinangor, Kab. Sumedang",Yunus Rendi,0810809263654
+22,15,Cabang Dinas Pendidikan Wilayah IX,"(Di depan SMKN 1 Kertajati) Kertajati, Kabupaten Majalengka, Jawa Barat 45457",SUWENDI,085659891665
+23,15,Cabang Dinas Pendidikan Wilayah X,"Jl. DR. Cipto Mangunkusumo No. 99 Pekiringan, Kesambi, Kota Cirebon","Chaerudin, A.Md",082315020027
+24,15,Cabang Dinas Pendidikan Wilayah XI,"[ex BKPPW IV] - Jl. Ahmad Yani No.21 Sucikaler,Karangpawitan ,Kabupaten Garut",Dera,082240088640
+25,15,Cabang Dinas Pendidikan Wilayah XII,"Jalan Gudang Jero III No.21, Panglayungan, Cipedes, Tasikmalaya",Endang N,085223823131
+26,15,Cabang Dinas Pendidikan Wilayah XIII,"Jl. Ir. H. Djuanda, 132, Kec. Ciamis, Kabupaten Ciamis",R. Arso Budiriyadi,081345777516
+27,15,Balai Teknologi Informasi dan Komunikasi Pendidikan,"Jl. Dr. Radjiman No. 6, Bandung",Goen Gunawan,081395399549
+28,16,UPTD Panti Pemberdayaan Sosial  Bina  Remaja,"Jl. Maribaya No 22 Lembang, Kab. Bandung Barat",Agus Anang,085722811001
+29,16,UPTD Pengembangan dan Pelatihan Kesejahteraan Sosial,JL. Jendr. Amir Machmud No. 331 RT 01 RW 12 Kec.Cigugur Tengah Kota Cimahi,Suhanda,081220047540
+30,16,UPTD Panti Sosial Rehabilitasi Anak Berhadapan dengan Hukum,Jl. Raya Cileungsi-Jonggol Km. 4 Ds. Mekarsari Kec. Dileungsi Kab. Bogor,M. Yusuf,081295033923
+31,16,UPTD Panti Sosial Rehabilitasi Anak Membutuhkan Perlindungan Khusus,Jalan Raya Kamarung Kec. Pagaden Kab. Subang,Wawan Hermawan Ramadhan,081320238791
+32,16,UPTD Panti Rehabilitasi Sosial Bina Karya,Jl. Kolonel Masturi No. 1 Desa Jambudipa Kp. Panagelan Cisarua Bandung Barat,Asep P,082219073860
+33,16,"UPTD Panti Sosial Rehabilitasi Penyandang Disabilitas Mental, Sensorik Netra, Rungu Wicara, Tubuh","Jl. Jend. H. Amir Machmud No. 331 Cibabat, Kec. Cimahi Tengah, Kota Cimahi",Ali,087722006321
+34,16,"UPTD Panti Sosial Rehabilitasi Tuna Sosial, Kelas A, membawahkan Satuan Pelayanan Panti Rehabilitasi Sosial Karya Wanita","Jalan KH. Agus Salim No. 107 Palimanan Timur, Kec. Palimanan Kab. Cirebon",Aries,081320152147
+35,16,UPTD Panti Sosial Rehabilitasi Lanjut Usia dan Pemeliharaan Makam Pahlawan,"Jl. Raya Pacet No. 186 Pakutandang, Kec. Ciparay, Kab. Bandung",Tedi Sunandar,082114677524
+36,17,UPTD Balai Benih Kentang,"Desa Sukamanah, Pangalengan, Bandung, Jawa Barat 40378",Evi Rahayu Budiyanti,0812246834
+37,17,UPTD Balai Benih Hortikultura,"JL. Raya Jatinangor, Pasir Banteng, Hegarmanah, Jatinangor, Kab. Sumedang",R. M. Hery Purnomo A.,087722391354
+38,17,UPTD Balai Benih Padi dan Palawija,"JL. Raya Plumbon, Km. 12, Karangasem, Plumbon, Cirebon",Dodi Sunardi,082128400910
+39,17,UPTD Balai Pengawasan dan Sertifikasi Benih Tanaman Pangan dan Hortikultura,"JL. Ciganitri, II, Bojongsoang, 40288, Lengkong, Bojongsoang, Bandung",Heru Herikabayu,08212141211
+40,17,UPTD Balai Perlindungan Tanaman Pangan dan Hortikultura,"JL. Ciganitri, II, Bojongsoang, 40288, Lengkong, Bojongsoang, Bandung",Indra Permana,0811227291
+41,17,UPTD Balai Pelatihan Pertanian Tanaman Pangan dan Hortikultura,"Jalan Moch Ali, Bojongpicung, Kabupaten Cianjur, Jawa Barat",Pengkuh Anugrah,089657626834
+42,17,UPTD Balai Pengembangan Mekanisasi Pertanian Tanaman Pangan dan Hortikultura,"Jalan Moch Ali, Bojongpicung, Kabupaten Cianjur, Jawa Barat",Syeh Wahyudin,081563317017
+43,18,Balai Pengembangan Ternak Sapi Perah dan Hijauan Pakan Ternak Cikole Lembang,"Jl. Raya Tangkuban Parahu KM. 22,2 Cikole Kabupaten Bandung Barat",Aan Komarudin,0811206146
+44,18,Balai Pengawasan Mutu dan Keamanan Pangan,"ex DKPP Jl. Ir. H.Djuanda No.358, Dago,  Kecamatan Coblong,  Kota Bandung",M Benny B.,081573126669
+45,18,Balai Pengujian Mutu dan Keamanan Pakan/Bahan Pakan Cikole Lembang,"Jl. Raya Tangkuban Parahu KM. 22,2 Cikole Kabupaten Bandung Barat",Lukman Nurdiana,081220323681
+46,18,Balai Pelatihan Peternakan dan Ketahanan Pangan Cikole Lembang,"Jl. Raya Tangkuban Parahu KM. 22,2 Cikole Kabupaten Bandung Barat",Dadang Dedi Mulyadi,085974906944
+47,18,Balai Kesehatan Hewan dan Kesehatan Masyarakat Veteriner (Lab),"Jl. Raya Tangkuban Parahu KM. 22,2 Cikole Kabupaten Bandung Barat",Yoyo Sukarya,081214688567
+48,18,Rumah Sakit Hewan,"Jl. Raya Tangkuban Parahu KM. 22,2 Cikole Kabupaten Bandung Barat",Mochamad Gugun Nugraha,085220431871
+49,18,Balai Pengembangan Perbibitan Ternak Unggas Jatiwangi,Jl. Raya  Loji KM. 35 Jatiwangi 45454 Majalengka,Nina Kurniasih,085222416995
+50,18,Balai Perbibitan dan Pengembangan Inseminasi Buatan Ternak Sapi Potong Ciamis,"Dusun Kidul, Desa Cijeungjing, Kec Cijeungjing, Kabupaten Ciamis",Agus ,081220521825
+51,18,Balai Perbibitan dan Pengembangan Inseminasi Buatan Ternak Sapi Perah Bunikasih,Desa Bunikasih Kecamatan Warungkondang Kabupaten Cianjur,Rusli Subhan,085220137095
+52,18,Balai Pengembangan Perbibitan Ternak Domba dan Kambing Margawati,"Jl. Margawati KM. 7 Kelurahan Sukanegla, Kec. Garut, Kab. Garut",Dadang Riswanto,081222643591
+53,18,UPTD Balai Kesehatan Hewan dan Kesehatan Masyarakat Veteriner (Kantor),"Jl. Ir. H.Djuanda No.358,  Coblong,  Kota Bandung,  Jawa Barat,  Indonesia,",,0226652326
+54,19,Cabang Dinas Kelautan dan Perikanan Wilayah Selatan,Jl. Raya Cigadog Kec. Leuwisari Singaparna-Tasikmalaya,Aa Kalbeni Rukmana,082218724910
+55,19,Cabang Dinas Kelautan dan Perikanan Wilayah Utara,Jl. Raya Sukamandi - Purwadadi Kec. Patokbeusi Subang,Reva Anjar,085659680693
+56,19,UPTD Pelabuhan Perikanan Cilauteureun,Kp. Pangawaren Ds. Pamalayan kec. Cikelet Garut, Asep D, 085223456734
+57,19,UPTD Pelabuhan Perikanan Muara Ciasem,"Kp. Sindang Laut 1, Ds. Muara Kec. Blanakan Subang",Bahrudin,085220387788
+58,19,UPTD Pengujian dan Penerapan Mutu Produk Perikanan,"Jl. Sutawinangun No. 2 Pekiringan, Kesambi, Kota Cirebon",Andi Affandi,085351459697
+59,19,UPTD Pengawasan Sumber Daya Kelautan dan Perikanan Wilayah Selatan,Jl. Raya Cipanas KM 12 Ciherang Pacet Cianjur,Genta,081382979870
+60,19,UPTD Pengawasan Sumber Daya Kelautan dan Perikanan Wilayah Utara,"Jl. Sisingamangaraja No. 27 Panjunan, Lemahwungkuk, Kota Cirebon",Talim Sumarno,081564676367
+61,19,UPTD Perikanan Air Payau dan Laut Wilayah Selatan,"Jl. Sirna Raga Dusun Parapat, Desa Pangandaran, Kecamatan Pangandaran",Mamat Rohmat,081323007743
+62,19,UPTD Perikanan Air Payau dan Laut Wilayah Utara,Jl. Raya Cipucuk No. 13 Kec. Cilebar Kab. Karawang,Ardi Gartika,082298862144
+63,20,Cabang Dinas Kehutanan Wilayah I,Jl. Pajajaran no 3 Kota Bogor  ( depan terminal bis baranang siang),Erwin Setiawan,08112263257
+64,20,Cabang Dinas Kehutanan Wilayah II,Jl. Pramuka No 254 Des Bunder Kec. Jatiluhur Kab. Purwakarta,"Hidayat, S.AN",085221290553
+65,20,Cabang Dinas Kehutanan Wilayah III,"Jl. R. A. Kosasih No.45, Sukaraja, Kab. Sukabumi","Rizal Gumilar, S.IP.",081287284440
+66,20,Cabang Dinas Kehutanan Wilayah IV,Jl. Raya Bandung Kp. Warung Jambu RT 01/08 Ds. Hegarmanah Kec. Karang Tengah Kab. Cianjur,Dicky,08112148088
+67,20,Cabang Dinas Kehutanan Wilayah V,"Jl. Patriot No.36, Sukagalih, Tarogong Kidul, Kabupaten Garut, Jawa Barat 44151",Aam Amrullah,085220089334
+68,20,Cabang Dinas Kehutanan Wilayah VI,"Jl. Bebedahan II No.41, Lengkongsari, Tawang, Tasikmalaya, Jawa Barat 46111",Indra Gunawan,085322280330
+69,20,Cabang Dinas Kehutanan Wilayah VII,"Jl. Koperasi No.77, Kertasari, Kec. Ciamis, Kabupaten Ciamis, Jawa Barat 46213",Drs.Asep Iman Chandra Margana,081321508959
+70,20,Cabang Dinas Kehutanan Wilayah VIII,"Jl. Ancaran, Kec. Kuningan, Kabupaten Kuningan, Jawa Barat 45514",Maman Somantri,081646890788
+71,20,Cabang Dinas Kehutanan Wilayah IX,"Jl. Serma Muchtar No.123, Situ, Sumedang Utara, Kabupaten Sumedang, Jawa Barat 45621",Atep Ziki,082218979529
+72,20,UPTD Taman Hutan Raya Ir. H. Djuanda,"Ir. H. Djuanda No.99, Dago Pakar, Ciburial, Cimenyan, Bandung",Rahmat Nurhidayat,081214900026
+73,20,UPTD Sertifikasi dan Perbenihan Tanaman Hutan,"Jl. Jatinangor, Kabupaten Sumedang, Jawa Barat 45363","Setianingsih Sayekti S, STP.,M.Si",08122012050
+74,20,UPTD Pelayanan Pengolahan Hasil Hutan,"Jalan Sasak Gantung No.1 3, Kanci, Astanajapura, Cirebon, West Java 45181","Tony Irawan, SP.,MT",081322100714
+75,21,UPTD Balai Pengembangan dan Produksi Benih Perkebunan,Jl. Arcamanik 106 Sindanglaya Bandung,Alan,085721152115
+76,21,UPTD Balai Pengawasan dan Sertifikasi Benih Perkebunan,Jl. Ir. H. Djuanda NO. 377 Bandung 40135,Dayat Suryadarma,0222055826
+77,21,UPTD Balai Perlindungan Perkebunan,"Jl. Pasir Jati Timur, Jatiendah, Ujung Berung, Kota Bandung",Aam Muharam,0852-8902-8308
+78,22,UPTD Pengelolaan Prasarana Perhubungan Lalu Lintas Angkutan Jalan Wilayah I,"Jl. Ir. H. Juanda No. 4  Pabaton, Bogor Tengah, Kota Bogor",Budi Prihandjaja,08122403186
+79,22,UPTD Pengelolaan Prasarana Perhubungan Lalu Lintas Angkutan Jalan Wilayah II,"Jl. Raya Cinunuk KM 16.5 Cileunyi, Bandung",Khareza Heswara,087771795274
+80,22,UPTD Pengelolaan Prasarana Perhubungan Lalu Lintas Angkutan Jalan Wilayah III,"Jl. Raya Bandung - Garut 17, Talagasari, Kec. Kadungora, Kabupaten Garut, Jawa Barat 44153",Nur Heryawati,02287827404
+81,22,UPTD Pengelolaan Prasarana Perhubungan Lalu Lintas Angkutan Jalan Wilayah IV,"Jl. Brigjen Dharsono No. 16 By Pass Kertawinangun, Kedawung, Cirebon",Gusjon,082126026593
+82,22,"UPTD Pengelolaan Prasarana Perhubungan Lalu Lintas Angkutan Sungai, Danau, dan Penyeberangan",Jl. Raya Cinunuk KM 16.5 Bandung,Roket,022878227404
+83,22,UPTD Pengelolaan Prasarana Perhubungan Pelabuhan Laut,"Jl. Brigjen Dharsono No. 16 By Pass Kertawinangun, Kedawung, Cirebon",Haris Sumarso,02318803744
+84,22,UPTD Pelayanan Jasa Kebandarudaraan Nusawiru (Kantor),"Kondangjajar Cijulang, Pangandaran, Jawa Barat",,
+85,22,UPTD Pelayanan Jasa Kebandarudaraan Nusawiru (Bandara),Jl. Raya Cinunuk KM 16.5 Bandung,,
+86,24,UPTD Pengelolaan Jalan dan Jembatan Wilayah Pelayanan I,"Jl. Raya Ciranjang Km. Bd. 52 Ciranjang, Kab. Cianjur",Galuh,0895808719191
+87,24,UPTD Pengelolaan Jalan dan Jembatan Wilayah Pelayanan II,"Jl. Bhayangkara No. 209 Selabatu, Cikole, Kota Sukabumi",Iwan,085723136383
+88,24,UPTD Pengelolaan Jalan dan Jembatan Wilayah Pelayanan III,"Jl. Soekarno-Hatta No.609, Sukapura, Kiaracondong, Kota Bandung",Noer,082218783867
+89,24,UPTD Pengelolaan Jalan dan Jembatan Wilayah Pelayanan IV,Jl. Raya Paseh No. 142 - 145 Km.Bdg. 55+900 Sumedang,Roni,082317065065 
+90,24,UPTD Pengelolaan Jalan dan Jembatan Wilayah Pelayanan V,Jl. Raya Ciamis Km.Bdg.108+600Kec.SindangkasihKabupaten Ciamis,Riyaldi,082341815800
+91,24,UPTD Pengelolaan Jalan dan Jembatan Wilayah Pelayanan VI,"Jl. Pangeran Cakrabuana No.102 Sendang, Sumber, Cirebon",Gunawan,087787023850
+92,24,UPTD Laboratorium Bahan Konstruksi,Jl. AH. Nasution No. 117 Ujungberung Bandung,Hadiwinata,081220744684
+93,25,UPTD Pengelolaan Sumber Daya Air Wilayah Sungai Ciliwung-Cisadane,"Jl. Paledang No. 35 Paledang, Bogor Tengah, Kota Bogor",Priyadi Eri Wibowo,085781822074
+94,25,UPTD Pengelolaan Sumber Daya Air Wilayah Sungai Cisadea-Cibareno,"Jl. Kaswari (Bhayangkara), Kel.Selabatu, Kecamatan Cikole No. 40 Sukabumi",Tepi Rizki Anditia,081218678260
+95,25,UPTD Pengelolaan Sumber Daya Air Wilayah Sungai Citarum,Jl. H. Hasan (Ranca Mekar) No. 3 Kel. Cisaranten Kidul; Kec. Gede Bage Bandung,Riyan,085624929632
+96,25,UPTD Pengelolaan Sumber Daya Air Wilayah Sungai Cimanuk-Cisanggarung,Jl. Pangeran Cakrabuana Ds. Kepompongan; Kec. Talun Kab. Cirebon Jawa Barat 45171,"Rudi Eko Hartadi.,ST",081324139919
+97,25,UPTD Pengelolaan Sumber Daya Air Wilayah Sungai Citanduy,"Jl. R.A.A Wiratanuningrat No. 03 Empangsari, Tawang, Tasikmalaya","Adi Perwadi.,ST",085223444894
+98,25,UPTD Pengelolaan Sumber Daya Air Wilayah Sungai Ciwulan-Cilaki,Jl. Perintis Kemerdekaan km 6 Kawalu Tasikmalaya,"Andi Handayana.,S.Sos",085223177166
+99,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah I Cianjur,"Jl. Ir. H.Juanda Km 03 No. 51 Panembong, Cianjur",Riki Firmansyah,085923217689
+100,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah II Bogor,Jl. Brawijaya Villa Indah Pajajaran Kota Bogor,M Gunawan,0877-1437-8252
+101,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah III Purwakarta,"Jl. Singawinata No 55 Nagri Tengah, Kec. Purwakarta, Kabupaten Purwakarta",Widodo,085313291111
+102,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah IV Bandung,CIMAHI,"Iwan Kusmawan, S.Sos. Msi",082126060206
+103,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah V Sumedang,"Jl. Kolonel Ahmad Syam, Cikeruh, Jatinangor, Kabupaten Sumedang",Jeni Nunu,081220172131
+104,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah VI Tasikmalaya,"Jl. Perintis Kemerdekaan km 5 Kawalu Tasikmalaya,  Jawa Barat 46182",Ujang Swarna,085317156171
+105,26,Cabang Dinas Energi dan Sumber Daya Mineral Wilayah VII Cirebon,"Jl. Sunan Kalijaga No. 6 Komplek Perkantoran Sumber, Cirebon",Jun,081320620864
+106,26,UPTD Laboratorium Energi dan Sumber Daya Mineral (Lab),"Jl. Soekarno-Hatta No.576 Sekejati, Buahbatu, Kota Bandung",,0
+107,26,UPTD Laboratorium Energi dan Sumber Daya Mineral (kantor),"Jl. Pasirluyu Selatan No. 5 Pasirluyu, Regol, Kota Bandung",Irvan,081322529257
+108,27,UPTD Pendidikan dan Pelatihan Perkoperasian dan Wirausaha,JL. SOEKARNO HATTA KM. 11 NO. 708 BANDUNG,Ate Suparyan,081320708808
+109,28,UPTD Pengelolaan Kebudayaan Daerah Jawa Barat,"Jl. Bukit Dago Utara No.53, Dago, Coblong, Kota Bandung, Jawa Barat 40135",Hendra,08156235260
+110,29,UPTD Industri Logam,Jalan Soekarno Hatta Km.12.5 Kota Bandung,Sukarna,085220775275
+111,29,"UPTD Industri Pangan, Olahan dan Kemasan","Jalan Sampoerna No. 18 Pasteur, Sukajadi, Kota Bandung",Fajar,082218225050
+112,29,UPTD Balai Pengujian dan Sertifikasi Mutu Barang Logam dan Elektronika Karawang,"Jl. Husni Hamid No. 3 Nagasari, Karawang Bar., Kabupaten Karawang","Harry Cahyadi, ST",081382133273
+113,29,UPTD Balai Pengujian dan Sertifikasi Mutu Barang Keramik dan Tabung Gas Bogor,"Jl. Raya Tajur No. 52, Bogor Selatan, Kota Bogor","Beny Kustiwa, SH.,MM",081222956788
+114,29,UPTD Balai Pengujian dan Sertifikasi Mutu Barang Air Minum dalam Kemasan Cirebon,Jl. Dr. Wahidin Sudiro Husodo No. 14 Kota Cirebon,"Dewi Indah Modjainte,Amd",081395924481
+115,29,UPTD Balai Pengujian dan Sertifikasi Mutu Barang Agro Bandung,"Jl. Raya Cinunuk No. 204 Cimekar, Cileunyi, Bandung","Bondan Wisnuwardhana, ST.,MT",081931174393
+116,30,UPTD Pemberdayaan Perempuan dan Anak,"JL. LLRE MARTADINATA NO.2 BABAKAN, CIAMIS KEC SUMUR BANDUNG 40116",Andhika,083817482975
+117,31,UPTD Balai Latihan Kerja Kompetensi,"Jl. KH. Agus Salim No.206, Bekasi Jaya, Bekasi Timur, Kota Bekasi 17112",Deni Hidayat,085759205123
+118,31,UPTD Balai Latihan Kerja Pekerja Migran Indonesia,Jl. Soekarno-Hatta No. 584 Bandung,Andi Adrian La Tonra Guttu,082240411140
+119,31,UPTD Balai Latihan Kerja Mandiri,Jl. Soekarno-Hatta No. 567 Bandung,Ervan Hakim,0888222683665
+120,31,UPTD Pengawasan Ketenagakerjaan Wilayah I Bogor,"Jl. K S Tubun No.150 Cibuluh, Bogor Utara, Kota Bogor",Gilang Ramadhan,085691989555
+121,31,UPTD Pengawasan Ketenagakerjaan Wilayah II Bekasi dan Karawang,"Jl. Tarumanegara Kav. 8 CBD Grand Taruma Blok F 01 Darmawangsa III Sukamakmur, Telukjambe Timur, Kabupaten Karawang",Anwar,082125276363
+122,31,UPTD Pengawasan Ketenagakerjaan Wilayah III Cirebon,"Jl. Brigjen Dharsono No. 101 Kertawinangun, Kedawung, Cirebon",Nazib Haryanto,087736756349
+123,31,UPTD Pengawasan Ketenagakerjaan Wilayah IV Bandung,"Jl. R.E. Martadinata, Babakan Ciamis, Sumur Bandung, Kota Bandung",Fahmi Ramdani,085320555737
+124,31,UPTD Pengawasan Ketenagakerjaan Wilayah V Tasikmalaya,Jl. Achmad Yani no. 21 Garut kota Eks BKPP IV,Resty Agustin,0817873789
+125,34,Taman Mini Indonesia Indah,"Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta",,
+126,36,UPTD Pengamanan Dan Pemanfaatan Aset,"Jl. Diponegoro No.22, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",,0
+127,40,"UPTD Pusat Layanan Digital, Data dan Informasi Geospasial","Jl. Diponegoro No.22, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",Gustiman,081320224086
