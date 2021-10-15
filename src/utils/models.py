@@ -5,7 +5,7 @@ from sqlalchemy.sql.elements import Null
 from ..utils.crypt import encrypt, decrypt
 
 from flask_sqlalchemy import SQLAlchemy
-import json, requests
+import json, requests, datetime as datetm
 from requests.auth import HTTPBasicAuth
 
 db = SQLAlchemy()
@@ -71,6 +71,7 @@ class Opd(db.Model):
     phone_number  = db.Column(db.String())
     created_at = db.Column(db.DateTime, default =  datetime.now())
     uptd = db.relationship('Uptd', backref='master_opd', lazy=True)
+    opd_insident = db.relationship('OpdInsident', backref='opd_insident', lazy=True)
     opd_link = db.relationship('OpdLink', backref='master_opd', lazy=True)
 
     def __init__(self,name,address,pic,phone_number, created_at):
@@ -99,10 +100,8 @@ class Opd(db.Model):
         if self.id == 38:
             print("mantul")
         opd_link = OpdLink.query.filter_by(opd_id = self.id).all()
-        #     opd_link_data = [e.returnOpdLink() for e in opd_link]
-        # else:
-        #     opd_link = OpdLink.query.filter_by(opd_id = opd_id).first()
-        #     opd_link_data = opd_link.returnOpdLink(uptd_id)
+        opd_insident = OpdInsident.query.filter_by(opd_id = self.id).all()
+        
         if param_uptd == "none" or param_uptd == "":
             uptd_list_data = []
         else:
@@ -120,6 +119,7 @@ class Opd(db.Model):
             'phone_number' : self.phone_number,
             'uptd_list': uptd_list_data,
             'opd_link': [e.returnOpdLink(start_date, end_date) for e in opd_link],
+            'opd_insident': [e.returnToOpdInsident(start_date, end_date) for e in opd_insident],
             'created_at' : self.created_at
         }
 
@@ -132,7 +132,9 @@ class Uptd(db.Model):
     address  = db.Column(db.String())
     pic  = db.Column(db.String())
     phone_number  = db.Column(db.String())
+    opd = db.relationship('Opd', backref='opd_master', lazy=True)
     uptd_link = db.relationship('UptdLink', backref='master_opd', lazy=True)
+    uptd_insident = db.relationship('UptdInsident', backref='uptd_insident', lazy=True)
     created_at = db.Column(db.DateTime, default =  datetime.now())
 
     def __init__(self,opd_id,name,address,pic,phone_number, created_at):
@@ -148,9 +150,11 @@ class Uptd(db.Model):
         return '<opd id {}>'.format(self.id)
 
     def serialise(self):
+        opd = Opd.query.filter_by(id = self.opd_id).first()
         return {
             'id' : self.id,
             'opd_id': self.opd_id,
+            'opd_name' : opd.name,
             'name' : self.name,
             'address' : self.address,
             'pic' : self.pic,
@@ -163,6 +167,7 @@ class Uptd(db.Model):
         #     uptd_link_data = []
         # elif param_uptd == "all":
         uptd_link = UptdLink.query.filter_by(uptd_id = self.id).all()
+        uptd_insident = UptdInsident.query.filter_by(uptd_id = self.id).all()
             
         #     uptd_link_data = [e.returnUptdLink() for e in uptd_link]
         # else:
@@ -176,6 +181,7 @@ class Uptd(db.Model):
             'pic' : self.pic,
             'phone_number' : self.phone_number,
             'uptd_link':[e.returnUptdLink(start_date, end_date) for e in uptd_link],
+            'uptd_insident':[e.returnToUptdInsident(start_date, end_date) for e in uptd_insident],
             'created_at' : self.created_at
         }
 
@@ -187,6 +193,7 @@ class OpdLink(db.Model):
     opd_id  = db.Column(db.Integer, db.ForeignKey('master_opd.id'))
     isp_id  = db.Column(db.Integer, db.ForeignKey('master_isp.id'))
     band_id  = db.Column(db.Integer, db.ForeignKey('master_bandwith.id'))
+    opd = db.relationship('Opd', backref='link_opd', lazy=True)
     isp = db.relationship('Isp', backref='isp_opd', lazy=True)
     bandwith = db.relationship('Bandwith', backref='bandwith_opd', lazy=True)
     created_at = db.Column(db.DateTime, default =  datetime.now())
@@ -351,6 +358,17 @@ class OpdLink(db.Model):
             'max_speed': data_prop['max_speed'],
             'min_speed': data_prop['min_speed'],
             'speed_average': data_prop['speed_average']
+        }
+
+    def returnAllOpdLink(self):
+        link_opd = Opd.query.filter_by(id = self.opd_id).first()
+        return {
+            'id' : self.id,
+            'prtg_id' : self.prtg_id,
+            'opd_id' : link_opd.id,
+            'isp':self.isp.name,
+            'opd_name':link_opd.name,
+            'bandwith':self.bandwith.bandwith
         }
 
 class UptdLink(db.Model):
@@ -528,6 +546,17 @@ class UptdLink(db.Model):
             'speed_average': data_prop['speed_average']
         }
 
+    def returnAllUptdLink(self):
+        link_uptd = Uptd.query.filter_by(id = self.uptd_id).first()
+        return {
+            'id' : self.id,
+            'prtg_id' : self.prtg_id,
+            'opd_id' : link_uptd.id,
+            'isp':self.isp.name,
+            'opd_name':link_uptd.name,
+            'bandwith':self.bandwith.bandwith
+        }
+
 class Bandwith(db.Model):
     __tablename__ = 'master_bandwith'
 
@@ -585,6 +614,132 @@ class Isp(db.Model):
             'name' : self.name,
             'created_at' : self.created_at
         }
+
+class Complaint(db.Model):
+    __tablename__ = 'master_complaint'
+
+    id = db.Column(db.Integer, primary_key = True)
+    category  = db.Column(db.String())
+    created_at = db.Column(db.DateTime, default =  datetime.now())
+
+    def __init__(self,category,created_at):
+        self.category = category,
+        self.created_at = created_at
+
+    # buat ngereturn npk nya
+    def __repr__(self):
+        return '<isp id {}>'.format(self.id)
+
+    def serialise(self):
+        return {
+            'id' : self.id,
+            'category' : self.category,
+            'created_at' : self.created_at
+        }
+
+    def returnToComplaint(self):
+        return {
+            'id' : self.id,
+            'category' : self.category,
+            'created_at' : self.created_at
+        }
+
+class OpdInsident(db.Model):
+    __tablename__ = 'opd_insident'
+
+    id = db.Column(db.Integer, primary_key = True)
+    opd_id  = db.Column(db.Integer, db.ForeignKey('master_opd.id'))
+    month = db.Column(db.Integer)
+    comp_id = db.Column(db.Integer, db.ForeignKey('master_complaint.id'))
+    amount = db.Column(db.Integer)
+    complaint = db.relationship('Complaint', backref='complaint_opd', lazy=True)
+    opd = db.relationship('Opd', backref='opd', lazy=True)
+    created_at = db.Column(db.DateTime, default =  datetime.now())
+
+    def __init__(self, opd_id, month, comp_id, amount, created_at):
+        self.opd_id = opd_id,
+        self.month = month,
+        self.comp_id = comp_id,
+        self.amount = amount,
+        self.created_at = created_at
+
+    # buat ngereturn npk nya
+    def __repr__(self):
+        return '<isp id {}>'.format(self.id)
+
+    def serialise(self):
+        return {
+            'id' : self.id,
+            'opd_id' : self.opd_id,
+            'comp_id' : self.comp_id,
+            'opd_name': self.opd.name,
+            'month' : self.month,
+            'amount' : self.amount,
+            'complaint':self.complaint.category,
+            'created_at' : self.created_at
+        }
+
+    def returnToOpdInsident(self, start_date, end_date):
+        st_date = datetm.datetime.strptime(start_date, "%Y-%m-%d-%H-%M-%S")    
+        ed_date = datetm.datetime.strptime(end_date, "%Y-%m-%d-%H-%M-%S")
+        # rg_date = range(int(st_date.month), int(ed_date.month))
+        if self.month >= int(st_date.month) or self.month <= int(ed_date.month):
+            return {
+                'month' : self.month,
+                'comp_id' : self.comp_id,
+                'amount' : self.amount,
+                'complaint':self.complaint.category,
+                'created_at' : self.created_at
+            }
+        else: return None
+            
+
+class UptdInsident(db.Model):
+    __tablename__ = 'uptd_insident'
+
+    id = db.Column(db.Integer, primary_key = True)
+    uptd_id  = db.Column(db.Integer, db.ForeignKey('master_uptd.id'))
+    month = db.Column(db.Integer)
+    comp_id = db.Column(db.Integer, db.ForeignKey('master_complaint.id'))
+    amount = db.Column(db.Integer)
+    complaint = db.relationship('Complaint', backref='complaint_uptd', lazy=True)
+    uptd = db.relationship('Uptd', backref='uptd', lazy=True)
+    created_at = db.Column(db.DateTime, default =  datetime.now())
+
+    def __init__(self, uptd_id, month, comp_id, amount, created_at):
+        self.uptd_id = uptd_id,
+        self.month = month,
+        self.comp_id = comp_id,
+        self.amount = amount,
+        self.created_at = created_at
+
+    # buat ngereturn npk nya
+    def __repr__(self):
+        return '<isp id {}>'.format(self.id)
+
+    def serialise(self):
+        return {
+            'id' : self.id,
+            'uptd_id' : self.uptd_id,
+            'month' : self.month,
+            'comp_id' : self.comp_id,
+            'amount' : self.amount,
+            'created_at' : self.created_at
+        }
+
+    def returnToUptdInsident(self, start_date, end_date):
+        st_date = datetm.datetime.strptime(start_date, "%Y-%m-%d-%H-%M-%S")    
+        ed_date = datetm.datetime.strptime(end_date, "%Y-%m-%d-%H-%M-%S")
+        # rg_date = range(int(st_date.month), int(ed_date.month))
+        if self.month >= int(st_date.month) or self.month <= int(ed_date.month):
+            return {
+                'month' : self.month,
+                'comp_id' : self.comp_id,
+                'amount' : self.amount,
+                'complaint':self.complaint.category,
+                'created_at' : self.created_at
+            }
+        else: return None  
 
 class Testing(db.Model):
     __tablename__ = 'testing'
