@@ -14,7 +14,7 @@ from ..utils.authorisation import generateToken
 from ..utils.authorisation import verifyLogin
 
 
-from ..utils.models import db, Opd, Uptd, Bandwith, Isp, OpdLink, UptdLink, OpdInsident, UptdInsident
+from ..utils.models import db, Opd, Uptd, Bandwith, Isp, OpdLink, UptdLink, OpdInsident, UptdInsident, Complaint
 
 from . import router
 
@@ -719,7 +719,7 @@ def addIsp():
     else:
         try:            
             name = Isp(
-                name = name,
+                name = name.title(),
                 created_at = datetime.datetime.now() )
 
             db.session.add(name)
@@ -835,7 +835,7 @@ def updateIspById(id):
         response["status_code"] = 403
     else:
         try:            
-            isp.name = isp_name
+            isp.name = isp_name.title()
 
             db.session.commit()
 
@@ -870,7 +870,7 @@ def deleteIsp(id):
     isp = db.session.query(Isp).filter_by(id = id).first()
 
     if (isp == None):
-        response["message"] = "Data bandwith tidak ditemukan"
+        response["message"] = "Data isp tidak ditemukan"
     else:
         try:            
             Isp.query.filter_by(id=id).delete()
@@ -889,6 +889,210 @@ def deleteIsp(id):
 
     
     return jsonify(response)
+
+
+
+
+
+
+
+
+#####################################################################################################
+# ADD NEW COMPLAINT CATOGORY
+#####################################################################################################
+@router.route('/complaint/add', methods=['POST'])
+def addComplaint():
+    body = request.json
+
+    category = body["category"]
+
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    # cek email udah dipake belum
+    is_exist = db.session.query(Complaint).filter_by(category = category).scalar() is not None
+    
+    if (is_exist == True):
+        response["message"] = "Data kategori keluhan sudah ada"
+    else:
+        try:            
+            complaint = Complaint(
+                category = category.title(),
+                created_at = datetime.datetime.now() )
+
+            db.session.add(complaint)
+            db.session.commit()
+
+            response["message"] =  "Complaint created. User-id = {}".format(category.id)
+            response["error"] = False
+            response["data"] = name.serialise()
+        except Exception as e:
+            response["error"] = True
+            response["status_code"] = 500
+            response["message"] = str(e)
+        finally:
+            db.session.close()
+
+    
+    return jsonify(response)
+
+#####################################################################################################
+# GET ALL COMPLAINT CATOGORY
+#####################################################################################################
+@router.route('/complaint/get-all-complaint')
+@verifyLogin
+def getAllComplaint():
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    # cek username ada atau engga
+    is_exist = db.session.query(Complaint.category).all() is not None
+
+    if (is_exist == True) :
+        try:
+            complaint = Complaint.query.order_by(Complaint.category).all()
+            data = ([e.serialise() for e in complaint])
+            
+            data_count  = len(data)
+            response["message"] = "Complaint(s) found : " + str(data_count)
+            response["error"] = False
+            response["status_code"] = 200
+            response["data"] = data
+        except Exception as e:
+            response["error"] = True
+            response["status_code"] = 500
+            response["message"] = str(e)
+        finally:
+            db.session.close()
+
+    else :
+        response["status_code"] = 404
+        response["error"] = False
+        response["message"] = "Complaint Tidak Ditemukan"
+
+    return jsonify(response)
+
+#####################################################################################################
+# GET COMPLAINT BY ID
+#####################################################################################################
+@router.route('/complaint/get-complaint/<id>')
+@verifyLogin
+def getComplaintById(id):
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    # cek username ada atau engga
+    is_exist = db.session.query(Complaint).filter_by(id = id).scalar() is not None
+
+    if (is_exist == True) :
+        try:
+            complaint = Complaint.query.filter_by(id = id).first()
+
+            response["message"] ="Data Complaint ditemukan"
+            response["error"] = False            
+            response["status_code"] = 200
+            response["data"] = complaint.serialise()
+        except Exception as e:
+            response["message"] = str(e)
+            response["error"] = True
+            response["status_code"] = 500
+        finally:
+            db.session.close()
+
+    else :
+        response["message"] = "Data Complaint tidak ditemukan"
+
+    return jsonify(response)
+
+#####################################################################################################
+# UPDATE COMPLAINT BY ID
+#####################################################################################################
+@router.route('/complaint/update-complaint/<id>', methods=['PUT'])
+@verifyLogin
+def updateComplaintById(id):
+    body = request.json
+    
+    category = body["category"]
+
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    is_exist = db.session.query(Complaint).filter_by(id = id).first()
+    
+    if (is_exist == None):
+        response["message"] = "Complaint tidak ditemukan"
+        response["status_code"] = 403
+    else:
+        try:            
+            is_exist.category = category.title()
+
+            db.session.commit()
+
+            response["message"] =  "Complaint updated. bandwith-id = {}".format(id)
+            response["error"] = False            
+            response["status_code"] = 200
+            response["data"] = is_exist.serialise()
+        except Exception as e:
+            response["message"] = str(e)
+            response["error"] = True
+            response["status_code"] = 500
+        finally:
+            db.session.close()
+
+    
+    return jsonify(response)
+
+#####################################################################################################
+# DELETE COMPLAINT MASTER
+#####################################################################################################
+@router.route('/complaint/delete-complaint/<id>', methods=['DELETE'])
+@verifyLogin
+def deleteComplaint(id):
+    
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    # get user
+    complaint = db.session.query(Complaint).filter_by(id = id).first()
+
+    if (complaint == None):
+        response["message"] = "Data complaint tidak ditemukan"
+    else:
+        try:            
+            Complaint.query.filter_by(id=id).delete()
+
+            db.session.commit()
+
+            response["message"] =  "Data master complaint category with id {} has been deleted".format(id)
+            response["error"] = False
+            response["status_code"] = 200      
+        except Exception as e:
+            response["message"] = str(e)
+            response["error"] = True
+            response["status_code"] = 500
+        finally:
+            db.session.close()
+
+    
+    return jsonify(response)
+
+
+
 
 
 
@@ -1105,7 +1309,6 @@ def deleteOpdLink(id):
 
     
     return jsonify(response)
-
 
 
 
