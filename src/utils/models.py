@@ -366,8 +366,10 @@ class OpdLink(db.Model):
             'id' : self.id,
             'prtg_id' : self.prtg_id,
             'opd_id' : link_opd.id,
+            'isp_id' : self.isp_id,
             'isp':self.isp.name,
             'opd_name':link_opd.name,
+            'band_id':self.band_id,
             'bandwith':self.bandwith.bandwith
         }
 

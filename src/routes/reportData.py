@@ -926,9 +926,9 @@ def addComplaint():
             db.session.add(complaint)
             db.session.commit()
 
-            response["message"] =  "Complaint created. User-id = {}".format(category.id)
+            response["message"] =  "Complaint created. User-id = {}".format(complaint.id)
             response["error"] = False
-            response["data"] = name.serialise()
+            response["data"] = complaint.serialise()
         except Exception as e:
             response["error"] = True
             response["status_code"] = 500
@@ -1201,11 +1201,11 @@ def getOpdLinkById(id):
     
     }
     # cek username ada atau engga
-    opdlink_exist = db.session.query(OpdLink).filter_by(opd_id = id).first()
+    opdlink_exist = db.session.query(OpdLink).filter_by(id = id).first()
 
     if (opdlink_exist != None):
         try:
-            opd_link = OpdLink.query.filter_by(opd_id = id).first()
+            opd_link = OpdLink.query.filter_by(id = id).first()
 
             response["message"] ="Data ditemukan"
             response["error"] = False
@@ -1244,7 +1244,7 @@ def updateOpdLink(id):
     }
 
     # get user
-    link_opd = db.session.query(OpdLink).filter_by(opd_id = id).first()
+    link_opd = db.session.query(OpdLink).filter_by(id = id).first()
     
     if (link_opd == None):
         response["message"] = "Opd opd tidak ditemukan"
@@ -1258,7 +1258,7 @@ def updateOpdLink(id):
 
             db.session.commit()
 
-            response["message"] =  "Data updated. opd-id = {}".format(opd_id)
+            response["message"] =  "Data updated. opd-id = {}".format(id)
             response["error"] = False            
             response["status_code"] = 200
             response["data"] = link_opd.returnAllOpdLink()
@@ -1286,18 +1286,17 @@ def deleteOpdLink(id):
     }
 
     # get user
-    link_opd = db.session.query(OpdLink).filter_by(opd_id = id).first()
+    link_opd = db.session.query(OpdLink).filter_by(id = id).first()
 
     if (link_opd == None):
         response["message"] = "Data opd tidak ditemukan"
     else:
-        try:            
-            id_opd = link_opd.opd_id
-            OpdLink.query.filter_by(opd_id=id).delete()
+        try:                        
+            OpdLink.query.filter_by(id=id).delete()
 
             db.session.commit()
 
-            response["message"] =  "Data opd with id {} has been deleted".format(id_opd)
+            response["message"] =  "Data opd with id {} has been deleted".format(id)
             response["error"] = False
             response["status_code"] = 200      
         except Exception as e:
@@ -1935,7 +1934,77 @@ def deleteUptdInsident(id):
 
 
 
+
   
+
+#####################################################################################################
+# GET ALL ISP NAME
+#####################################################################################################
+@router.route('/report/get-isp-name')
+@verifyLogin
+def getIspName():
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    try:
+        isp = Isp.query.order_by(Isp.name).all()
+
+        data = ([e.serialise() for e in isp])
+        dataCount  = len(data)
+        response["message"] = "Data(s) found : " + str(dataCount)
+        response["error"] = False
+        response["status_code"] = 200      
+        response["data"] = data
+    except Exception as e:
+        response["message"] = str(e)
+        response["error"] = True
+        response["status_code"] = 500
+        response["message"] = str(e)
+    finally:
+        db.session.close()
+
+
+    return jsonify(response)
+
+
+  
+
+#####################################################################################################
+# GET ALL BANDWITH LISTs
+#####################################################################################################
+@router.route('/report/get-band-list')
+@verifyLogin
+def getBandList():
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    try:
+        band = Bandwith.query.order_by(Bandwith.bandwith).all()
+
+        data = ([e.serialise() for e in band])
+        dataCount  = len(data)
+        response["message"] = "Data(s) found : " + str(dataCount)
+        response["error"] = False
+        response["status_code"] = 200      
+        response["data"] = data
+    except Exception as e:
+        response["message"] = str(e)
+        response["error"] = True
+        response["status_code"] = 500
+        response["message"] = str(e)
+    finally:
+        db.session.close()
+
+
+    return jsonify(response)
+
+
 
 #####################################################################################################
 # GET ALL OPD NAME
