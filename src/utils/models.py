@@ -553,9 +553,11 @@ class UptdLink(db.Model):
         return {
             'id' : self.id,
             'prtg_id' : self.prtg_id,
-            'opd_id' : link_uptd.id,
+            'uptd_id' : link_uptd.id,
+            'isp_id':self.isp_id,
             'isp':self.isp.name,
-            'opd_name':link_uptd.name,
+            'uptd_name':link_uptd.name,
+            'band_id':self.band_id,
             'bandwith':self.bandwith.bandwith
         }
 

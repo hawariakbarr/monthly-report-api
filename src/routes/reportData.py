@@ -1331,7 +1331,6 @@ def addUptdLink():
         "data" : {}
     }
 
-    # cek email udah dipake belum
     link_uptd = db.session.query(UptdLink).filter_by(uptd_id = id).first()
     
     if link_uptd != None:
@@ -1380,7 +1379,7 @@ def getUptdLink():
     }
 
     try:
-        uptd_link_all = UptdLink.query.order_by(UptdLink.id).all()
+        uptd_link_all = UptdLink.query.order_by(UptdLink.uptd_id).all()
 
         data = ([e.returnAllUptdLink() for e in uptd_link_all])
         uptd_all_count  = len(data)
@@ -2039,11 +2038,11 @@ def getOpdName():
     return jsonify(response)
 
 #####################################################################################################
-# GET ALL UPTD NAME
+# GET ALL UPTD NAME BY OPD ID
 #####################################################################################################
 @router.route('/report/get-uptd-name/<id>')
 @verifyLogin
-def getUptdName(id):
+def getUptdNameByOpdId(id):
     response = {
         "error" : True,
         "message" : "",
@@ -2051,7 +2050,7 @@ def getUptdName(id):
     }
 
     try:
-        uptd = db.session.query(Uptd).filter_by(opd_id = id).all()
+        uptd = db.session.query(Uptd).filter_by(id = id).all()
         data = ([e.serialise() for e in uptd])
         # uptdCount  = len(data)
         # response["message"] = "Uptd(s) found : " + str(uptdCount)
@@ -2069,4 +2068,38 @@ def getUptdName(id):
 
     return jsonify(response)
 
+
+
+
+#####################################################################################################
+# GET ALL UPTD NAME
+#####################################################################################################
+@router.route('/report/get-uptd-name')
+@verifyLogin
+def getUptdName():
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    try:
+        uptd = Uptd.query.order_by(Uptd.name).all()
+
+        data = ([e.serialise() for e in uptd])
+        dataCount  = len(data)
+        response["message"] = "Data(s) found : " + str(dataCount)
+        response["error"] = False
+        response["status_code"] = 200      
+        response["data"] = data
+    except Exception as e:
+        response["message"] = str(e)
+        response["error"] = True
+        response["status_code"] = 500
+        response["message"] = str(e)
+    finally:
+        db.session.close()
+
+
+    return jsonify(response)
 
