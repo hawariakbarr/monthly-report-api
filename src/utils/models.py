@@ -97,8 +97,6 @@ class Opd(db.Model):
 
     def returnToOpd(self, param_uptd, start_date, end_date):
         # if opd_id is None:
-        if self.id == 38:
-            print("mantul")
         opd_link = OpdLink.query.filter_by(opd_id = self.id).all()
         opd_insident = OpdInsident.query.filter_by(opd_id = self.id).all()
         
@@ -672,14 +670,16 @@ class OpdInsident(db.Model):
         return '<isp id {}>'.format(self.id)
 
     def serialise(self):
+        opd = Opd.query.filter_by(id = self.opd_id).first()
+        complaint = Complaint.query.filter_by(id = self.comp_id).first()
         return {
             'id' : self.id,
             'opd_id' : self.opd_id,
             'comp_id' : self.comp_id,
-            'opd_name': self.opd.name,
+            'opd_name': opd.name,
             'month' : self.month,
             'amount' : self.amount,
-            'complaint':self.complaint.category,
+            'complaint': complaint.category,
             'created_at' : self.created_at
         }
 
@@ -722,12 +722,16 @@ class UptdInsident(db.Model):
         return '<isp id {}>'.format(self.id)
 
     def serialise(self):
+        uptd = Uptd.query.filter_by(id = self.uptd_id).first()
+        complaint = Complaint.query.filter_by(id = self.comp_id).first()
         return {
             'id' : self.id,
             'uptd_id' : self.uptd_id,
             'month' : self.month,
             'comp_id' : self.comp_id,
             'amount' : self.amount,
+            'uptd_name': uptd.name,
+            'complaint': complaint.category,
             'created_at' : self.created_at
         }
 

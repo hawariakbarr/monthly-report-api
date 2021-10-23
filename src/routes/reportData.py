@@ -2103,3 +2103,38 @@ def getUptdName():
 
     return jsonify(response)
 
+
+
+#####################################################################################################
+# GET ALL COMPLAINT NAME
+#####################################################################################################
+@router.route('/report/get-complaint-name')
+@verifyLogin
+def getComplaintName():
+    response = {
+        "error" : True,
+        "message" : "",
+        "data" : {}
+    }
+
+    try:
+        complaint = Complaint.query.order_by(Complaint.category).all()
+
+        data = ([e.serialise() for e in complaint])
+        dataCount  = len(data)
+        response["message"] = "Data(s) found : " + str(dataCount)
+        response["error"] = False
+        response["status_code"] = 200      
+        response["data"] = data
+    except Exception as e:
+        response["message"] = str(e)
+        response["error"] = True
+        response["status_code"] = 500
+        response["message"] = str(e)
+    finally:
+        db.session.close()
+
+
+    return jsonify(response)
+
+
