@@ -1,6 +1,6 @@
 defaultCaesarMove = 7
 caesarMove = defaultCaesarMove
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
+alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-=_+[]}{\|;:<>?,./'
 number = '0123456789'
 initial = alphabet+number
 
