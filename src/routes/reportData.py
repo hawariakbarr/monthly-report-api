@@ -316,7 +316,7 @@ def addUptd():
     else:
         try:            
             uptd = Uptd(
-                name = name.title(),
+                name = name,
                 address = address.title(),
                 pic = pic.title(),
                 opd_id = opd_id,
@@ -2050,7 +2050,7 @@ def getUptdNameByOpdId(id):
     }
 
     try:
-        uptd = db.session.query(Uptd).filter_by(id = id).all()
+        uptd = db.session.query(Uptd).filter_by(opd_id = id).all()
         data = ([e.serialise() for e in uptd])
         # uptdCount  = len(data)
         # response["message"] = "Uptd(s) found : " + str(uptdCount)
